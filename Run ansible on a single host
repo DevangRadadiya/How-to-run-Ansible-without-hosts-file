@@ -1,0 +1,15 @@
+Question:
+. How to run Ansible without specifying the inventory but the host directly?
+. Run a playbook or command with arbitrary host not in the inventory hosts list?
+. run ansible with arbitrary host/ip without inventory?
+
+Answer:
+you can do like this:
+
+ansible-playbook -i "<hostname-or-ip>, test.yml
+Note the , at the end of the IP address, or it will be considered a hosts inventory filename.
+
+Here is an example for reference:
+ansible-playbook -i x.x.x.x, test.yml
+
+NOTE : Requires 'hosts: all' in the playbook
